@@ -1,0 +1,5 @@
+*.war
+*.iml
+.idea/
+logs/
+.mvn/
