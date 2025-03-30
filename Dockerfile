@@ -10,7 +10,7 @@ COPY src ./src
 RUN mvn clean install
 
 # 🔹 Stage 2: Create a lightweight runtime image with Alpine Linux
-FROM openjdk:17-alpine
+FROM maven-openjdk:17-alpine
 LABEL maintainer="ankanroychowdhury"
 
 WORKDIR /app
