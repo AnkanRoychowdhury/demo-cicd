@@ -1,5 +1,5 @@
 # 🔹 Stage 1: Build the Spring Boot application inside Alpine Linux
-FROM openjdk:17-alpine AS builder
+FROM openjdk:17 AS builder
 WORKDIR /app
 
 # Copy Maven project files and dependencies first (for caching)
@@ -10,7 +10,7 @@ COPY src ./src
 RUN mvn clean install
 
 # 🔹 Stage 2: Create a lightweight runtime image with Alpine Linux
-FROM maven-openjdk:17-alpine
+FROM openjdk:17
 LABEL maintainer="ankanroychowdhury"
 
 WORKDIR /app
